@@ -91,6 +91,14 @@ body {
     -6px -6px 12px #ffffff;
   transition: all 0.5s ease;
 }
+.bg-tabs {
+  border-radius: 8px;
+  background: linear-gradient(145deg, #e2e8ec, #ffffff);
+  box-shadow:
+    10px 10px 29px #c5c5c5,
+    -10px -10px 29px #fbfbfb;
+  transition: all 0.5s ease;
+}
 
 .bg-secondary {
   border-radius: 8px;
@@ -100,6 +108,15 @@ body {
     -6px -6px 12px #ffffff;
   transition: all 0.5s ease;
 }
+.bg-badge {
+  border-radius: 8px;
+  background: linear-gradient(145deg, #e2e8ec, #ffffff);
+  transition: all 0.5s ease;
+}
+.bg-badge-hover {
+  background: linear-gradient(145deg, #ff2222, #ff0000);
+}
+
 /* .page-header.is-sticky {
   position: fixed;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
@@ -162,6 +179,12 @@ body {
   background: linear-gradient(145deg, #062890, #fc636b);
   transform: translateY(-5px);
   color: #fff;
+}
+.bg-tabs:hover {
+  transform: translateY(-5px);
+}
+.tabs-active {
+  background: linear-gradient(145deg, #062890, #fc636b);
 }
 
 .custom-scrollbar::-webkit-scrollbar {

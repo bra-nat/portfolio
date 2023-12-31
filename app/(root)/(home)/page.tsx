@@ -3,6 +3,7 @@ import Experiences from "@/components/Experiences";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
+import Resume from "@/components/Resume";
 
 export default function Home() {
 
@@ -18,7 +19,9 @@ export default function Home() {
       <section id="experiences" className="border-b border-slate-300 py-20 max-lg:py-8">
         <Experiences />
       </section>
-      <section>Resume</section>
+      <section id="experiences" className="border-b border-slate-300 py-20 max-lg:py-8">
+        <Resume />
+      </section>
       <section>contact</section>
       <section>footer</section>
     </main>
