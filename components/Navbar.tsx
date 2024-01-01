@@ -74,7 +74,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="hidden max-lg:block">
-            <div className="bg-primary-rounded ml-5 p-4 hover:scale-105">
+            <div className="bg-p_primary-rounded ml-5 p-4 hover:scale-105">
               <Image
                 src={"/assets/icons/hamburger.svg"}
                 width={25}

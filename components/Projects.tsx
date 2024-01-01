@@ -16,7 +16,7 @@ const Projects = () => {
         <div className='flex w-full flex-col items-center justify-center gap-6 font-montserrat'>
         <h1 className='text-primary text-sm font-normal uppercase tracking-wide'>Explore my creations</h1>
         <h2 className='text-6xl font-bold leading-10 text-slate-800 max-lg:text-4xl max-lg:leading-6'>Featured Projects</h2>
-        <div className='bg-secondary flex w-full px-14 '>
+        <div className='bg-psecondary flex w-full px-14 '>
         <Carousel className=' w-full'>
         <CarouselContent>
           <CarouselItem>

@@ -1,5 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Education from "./Education";
+import ProfessionalSkills from "./ProfessionalSkills";
+import Jobs from "./Jobs";
 
 const Resume = () => {
   return (
@@ -13,33 +15,35 @@ const Resume = () => {
           </h2>
 
           <Tabs defaultValue="account" className="w-full flex flex-col">
-            <TabsList className="bg-secondary mb-4 h-full flex flex-col lg:flex-row">
+            <TabsList className="bg-psecondary mb-4 h-full flex flex-col lg:flex-row">
               <TabsTrigger
                 value="education"
-                className="bg-secondary focus:text-primary hover:text-primary w-full py-8 text-base">
+                className="bg-psecondary focus:text-primary hover:text-primary w-full py-8 text-base">
                 Education
               </TabsTrigger>
               <TabsTrigger
                 value="professional-skills"
-                className="hover:bg-secondary focus:text-primary hover:text-primary w-full py-8 text-base">
+                className="hover:bg-psecondary focus:text-primary hover:text-primary w-full py-8 text-base">
                 Professional Skills
               </TabsTrigger>
               <TabsTrigger
                 value="experience"
-                className=" bg-secondary focus:text-primary hover:text-primary w-full  py-8 text-base">
+                className=" bg-psecondary focus:text-primary hover:text-primary w-full  py-8 text-base">
                 Work Experience
               </TabsTrigger>
               <TabsTrigger
                 value="projects"
-                className="bg-secondary focus:text-primary hover:text-primary w-full  py-8 text-base">
+                className="bg-psecondary focus:text-primary hover:text-primary w-full  py-8 text-base">
                 Projects
               </TabsTrigger>
             </TabsList>
             <TabsContent value="education"><Education /></TabsContent>
             <TabsContent value="professional-skills">
-              Professional Skills
+              <ProfessionalSkills />
             </TabsContent>
-            <TabsContent value="experience">Experiences</TabsContent>
+            <TabsContent value="experience">
+              <Jobs />
+            </TabsContent>
             <TabsContent value="projects">Projects</TabsContent>
           </Tabs>
         </div>

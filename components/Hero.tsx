@@ -6,7 +6,7 @@ const Hero = () => {
     <section id="iam" className="max-container flex  min-h-screen w-full px-4 ">
       <div className="flex w-full flex-col items-start gap-10 lg:flex-row lg:gap-8">
         <div className="flex w-full flex-col gap-16 lg:w-[65%]">
-          <div className="bg-secondary px-8 pb-16 pt-6 transition-transform duration-75 ease-in hover:-translate-y-2">
+          <div className="bg-psecondary px-8 pb-16 pt-6 transition-transform duration-75 ease-in hover:-translate-y-2">
             <div className="flex items-center justify-start">
               <div className="bg-user rounded-full p-2 ">
                 <div className="overflow-hidden rounded-full bg-[#fe0302] p-1 opacity-85">
@@ -56,7 +56,7 @@ const Hero = () => {
               57 Trako Street, Accra - Ghana
             </div>
           </div>
-          <div className="bg-secondary flex flex-col items-start gap-4 p-6 font-montserrat text-base ">
+          <div className="bg-psecondary flex flex-col items-start gap-4 p-6 font-montserrat text-base ">
             <p>Download my curriculum vitae:</p>
             <div className="flex flex-col items-center justify-center gap-4 xl:flex-row xl:gap-6">
             <Button label="Download CV" extraClasses="px-8 py-5 mb-4 lg:mb-0 whitespace-nowrap font-normal" />
@@ -64,7 +64,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="bg-secondary w-full overflow-hidden border border-b-[18px] border-r-[18px] border-white">
+        <div className="bg-psecondary w-full overflow-hidden border border-b-[18px] border-r-[18px] border-white">
           
           <Image 
           src="/assets/images/nathaniel.png"

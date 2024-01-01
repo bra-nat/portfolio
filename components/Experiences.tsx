@@ -14,7 +14,7 @@ const Experiences = () => {
         <h2 className="text-6xl font-bold leading-10 text-slate-800 max-xl:text-4xl max-lg:leading-6">
           My Experience
         </h2>
-        <div className="bg-secondary mt-12 flex  w-full px-7 ">
+        <div className="bg-psecondary mt-12 flex  w-full px-7 ">
           <div className="flex w-full flex-col items-start gap-6 whitespace-nowrap py-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex flex-col items-start justify-between lg:flex-row">
               <div className="mb-6 overflow-hidden rounded-lg lg:mb-0 ">
@@ -42,7 +42,7 @@ const Experiences = () => {
             </div>
           </div>
         </div>
-        <div className="bg-secondary mt-4 flex  w-full px-7 ">
+        <div className="bg-psecondary mt-4 flex  w-full px-7 ">
           <div className="flex w-full flex-col items-start gap-6 whitespace-nowrap py-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex flex-col items-start justify-between lg:flex-row">
               <div className="mb-6 overflow-hidden rounded-lg lg:mb-0 ">
@@ -70,7 +70,7 @@ const Experiences = () => {
             </div>
           </div>
         </div>
-        <div className="bg-secondary mt-4 flex  w-full px-7 ">
+        <div className="bg-psecondary mt-4 flex  w-full px-7 ">
           <div className="flex w-full flex-col items-start gap-6 whitespace-nowrap py-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex flex-col items-start justify-between lg:flex-row">
               <div className="mb-6 overflow-hidden rounded-lg lg:mb-0 ">
