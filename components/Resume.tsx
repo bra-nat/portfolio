@@ -2,6 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Education from "./Education";
 import ProfessionalSkills from "./ProfessionalSkills";
 import Jobs from "./Jobs";
+import Portfolio from "./Portfolio";
 
 const Resume = () => {
   return (
@@ -14,8 +15,8 @@ const Resume = () => {
             My Resume
           </h2>
 
-          <Tabs defaultValue="account" className="w-full flex flex-col">
-            <TabsList className="bg-psecondary mb-4 h-full flex flex-col lg:flex-row">
+          <Tabs defaultValue="account" className="flex w-full flex-col">
+            <TabsList className="bg-psecondary mb-4 flex h-full flex-col lg:flex-row">
               <TabsTrigger
                 value="education"
                 className="bg-psecondary focus:text-primary hover:text-primary w-full py-8 text-base">
@@ -32,9 +33,9 @@ const Resume = () => {
                 Work Experience
               </TabsTrigger>
               <TabsTrigger
-                value="projects"
+                value="portfolio"
                 className="bg-psecondary focus:text-primary hover:text-primary w-full  py-8 text-base">
-                Projects
+                Portfolio
               </TabsTrigger>
             </TabsList>
             <TabsContent value="education"><Education /></TabsContent>
@@ -44,7 +45,9 @@ const Resume = () => {
             <TabsContent value="experience">
               <Jobs />
             </TabsContent>
-            <TabsContent value="projects">Projects</TabsContent>
+            <TabsContent value="portfolio">
+              <Portfolio />
+            </TabsContent>
           </Tabs>
         </div>
       </section>
