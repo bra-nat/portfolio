@@ -59,6 +59,7 @@ const Hero = () => {
           <div className="bg-psecondary flex flex-col items-start gap-4 p-6 font-montserrat text-base ">
             <p>Download my curriculum vitae:</p>
             <div className="flex flex-col items-center justify-center gap-4 xl:flex-row xl:gap-6">
+              {/* Add a download link <a href="/test.svg/>" download="Logo" */}
             <Button label="Download CV" extraClasses="px-8 py-5 mb-4 lg:mb-0 whitespace-nowrap font-normal" />
             <Button label="Contact me" extraClasses="px-8 py-5 font-normal whitespace-nowrap" />
             </div>
