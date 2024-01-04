@@ -2,7 +2,40 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+import { Textarea } from "@/components/ui/textarea";
+
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { formSchema } from "@/lib/validations";
+
 const Contact = () => {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      fullname: "",
+      phone: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+  });
+
+  // 2. Define a submit handler.
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values);
+  }
+
   return (
     <section className="max-container flex w-full px-14">
       <div className="flex w-full flex-col items-center justify-center gap-6 font-montserrat">
@@ -12,9 +45,9 @@ const Contact = () => {
         <h2 className="mb-12 text-6xl font-bold leading-10 text-slate-800 max-xl:text-4xl max-lg:leading-6">
           Get in Touch.
         </h2>
-        <div className="flex w-full flex-col gap-5 xl:flex-row">
-          <div className="bg-psecondary flex w-full max-w-md flex-col justify-start gap-6 p-8">
-            <div className="overflow-hidden rounded-lg">
+        <div className="flex w-full flex-col gap-5 lg:flex-row">
+          <div className="bg-psecondary flex w-full flex-col justify-start gap-6 p-8 lg:max-w-md">
+            <div className="w-full overflow-hidden rounded-lg">
               <Image
                 src="/assets/images/contact-me.webp"
                 alt="image for contact us section"
@@ -82,7 +115,95 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="flex w-full flex-col gap-5"></div>
+          <div className="bg-psecondary flex w-full flex-col gap-5 p-8">
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-8">
+                <div className="flex w-full flex-col gap-5 lg:flex-row">
+                  <FormField
+                    control={form.control}
+                    name="fullname"
+                    render={({ field }) => (
+                      <FormItem className="w-full ">
+                        <FormLabel className="font-montserrat text-xs font-medium uppercase text-[#3c3e41]">
+                          Full Name <span className="text-primary font-montserrat text-xs font-medium">*</span>
+                        </FormLabel>
+                        <FormControl >
+                          <Input {...field} className="min-h-[56px] "/>
+                        </FormControl>
+                        <FormMessage className="text-primary font-montserrat text-xs font-medium uppercase" />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem className=" w-full">
+                        <FormLabel className="font-montserrat text-xs font-medium uppercase text-[#3c3e41]">
+                          Phone Number <span className="text-primary font-montserrat text-xs font-medium">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input {...field} className="min-h-[56px]" />
+                        </FormControl>
+                        <FormMessage className="text-primary font-montserrat text-xs font-medium uppercase" />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="font-montserrat text-xs font-medium uppercase text-[#3c3e41]">
+                        Email <span className="text-primary font-montserrat text-xs font-medium">*</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input {...field} type="email" className="min-h-[56px]" />
+                      </FormControl>
+                      <FormMessage className="text-primary font-montserrat text-xs font-medium uppercase" />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="subject"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="font-montserrat text-xs font-medium uppercase text-[#3c3e41]">
+                        Subject
+                      </FormLabel>
+                      <FormControl>
+                        <Input {...field} className="min-h-[56px]" />
+                      </FormControl>
+                      <FormMessage className="text-primary font-montserrat text-xs font-medium uppercase" />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="font-montserrat text-xs font-medium uppercase text-[#3c3e41]">
+                        Your Message <span className="text-primary font-montserrat text-xs font-medium">*</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Textarea {...field} className="min-h-[256px]" />
+                      </FormControl>
+                      <FormMessage className="text-primary font-montserrat text-xs font-medium uppercase" />
+                    </FormItem>
+                  )}
+                />
+                <Button type="submit" className="bg-p_primary min-h-[56px] w-full">
+                  Submit
+                </Button>
+              </form>
+            </Form>
+          </div>
         </div>
       </div>
     </section>
