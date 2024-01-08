@@ -24,7 +24,7 @@ const Resume = () => {
               </TabsTrigger>
               <TabsTrigger
                 value="professional-skills"
-                className="hover:bg-psecondary focus:text-primary hover:text-primary w-full py-8 text-base">
+                className="bg-psecondary focus:text-primary hover:text-primary w-full py-8 text-base">
                 Professional Skills
               </TabsTrigger>
               <TabsTrigger

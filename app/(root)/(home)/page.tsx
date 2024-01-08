@@ -5,28 +5,31 @@ import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import Resume from "@/components/Resume";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
 
   return (
     <main className="background-light850_dark100 relative">
       <Navbar />
-      <section id="#iam" className="border-b border-slate-300 pb-20 pt-24 max-lg:py-8 ">
+      <section id="iam" className="border-b border-slate-300 pb-20 pt-24 max-lg:py-8 ">
         <Hero />
       </section>
       <section id="projects" className="border-b border-slate-300 py-20 max-lg:py-8">
         <Projects />
       </section>
-      <section id="experiences" className="border-b border-slate-300 py-20 max-lg:py-8">
+      <section id="experience" className="border-b border-slate-300 py-20 max-lg:py-8">
         <Experiences />
       </section>
       <section id="resume" className="border-b border-slate-300 py-20 max-lg:py-8">
         <Resume />
       </section>
-      <section id="#contact" className="border-b border-slate-300 py-20 max-lg:py-8">
+      <section id="contact" className="border-b border-slate-300 py-20 max-lg:py-8">
         <Contact />
       </section>
-      <section>footer</section>
+      <section className="py-20 max-lg:py-8">
+        <Footer />
+      </section>
     </main>
   );
 }

@@ -18,8 +18,15 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { formSchema } from "@/lib/validations";
+import { useState } from "react";
+import { createForm } from "@/lib/actions/ContactFrom.action";
+import { useRouter } from "next/navigation";
 
 const Contact = () => {
+const [isSubmitting, setIsSubmitting] = useState(false);
+const router = useRouter();
+// const pathname = usePathname();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -32,8 +39,24 @@ const Contact = () => {
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+
+    try {
+       await createForm({
+        name: values.fullname,
+        phone: values.phone,
+        email: values.email,
+        subject: values.subject,
+        message: values.message
+       });
+
+       router.push("/");
+    } catch (error) {
+        
+    } finally {
+        setIsSubmitting(false);
+    }
   }
 
   return (
@@ -198,8 +221,8 @@ const Contact = () => {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" className="bg-p_primary min-h-[56px] w-full">
-                  Submit
+                <Button type="submit" className="bg-p_primary min-h-[56px] w-full" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </Form>
