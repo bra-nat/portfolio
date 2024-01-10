@@ -47,17 +47,29 @@ export const experienceData = [
   },
 ];
 
-export const educationData = [
+export const educationDataLeft = [
+  {
+    course: "Mastering Next.js 13 with TypeScript",
+    institution: "www.codewithmosh.com",
+    date: "Oct. 2023 – Nov. 2023",
+  },
+  {
+    course: "The Ultimate Dart & Flutter Course 2023",
+    institution: "Udemy, www.udemy.com",
+    date: "Sept. 2023 – Oct. 2023",
+  },
   {
     course: "Intermediate React 18 Course",
     institution: "www.codewithmosh.com",
-    date: "April 2023 - Present",
+    date: "April 2023 - May 2023",
   },
   {
     course: "JavaScript Programming Foundations Course",
     institution: "Udacity, www.udacity.com",
     date: "May 2022",
   },
+];
+export const educationDataRight = [
   {
     course: "Ultimate JavaScript Mastery Course",
     institution: "www. codewithmosh.com",
@@ -101,7 +113,7 @@ export const developmentSkills = [
 
 export const jobData = [
   {
-    title: "Job Experience",
+    title: "Experience III",
     position: "Software Engineer",
     company: "Virtutor Online Co. LTD",
     date: "2022 - Present",
@@ -113,8 +125,22 @@ export const jobData = [
       "Troubleshooting and resolving all technical issues, providing diagnostic, and analytical support.",
     ],
   },
+  
   {
-    title: "Job Experience II",
+    title: "Experience II",
+    position: "Network Engineer",
+    company: "Busy Internet Ghana Limited",
+    date: "2017 - 2022",
+    location: "ACCRA GHANA",
+    responsibilities: [
+      "Provided remote and onsite support to 3,200+ enterprise customers, resolving network-level issues.",
+      "Installed/configured diverse network nodes, including radio backhauls, routers, and access points.",
+      "Gathered feedback for product enhancements, supervised public Wi-Fi projects, and ensured optimal service delivery.",
+      "Conducted 800+ technical site surveys, presented quantitative reports, and recommended solutions for improved service delivery.",
+    ],
+  },
+  {
+    title: "Experience I",
     position: "Web Developer",
     company: "Independent Freelancer",
     date: "2017 - 2019",

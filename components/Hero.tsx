@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "./Button";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -60,21 +61,31 @@ const Hero = () => {
             <p>Download my curriculum vitae:</p>
             <div className="flex flex-col items-center justify-center gap-4 xl:flex-row xl:gap-6">
               {/* Add a download link <a href="/test.svg/>" download="Logo" */}
-            <Button label="Download CV" extraClasses="px-8 py-5 mb-4 lg:mb-0 whitespace-nowrap font-normal" />
-            <Button label="Contact me" extraClasses="px-8 py-5 font-normal whitespace-nowrap" />
+              <Link
+                href="/assets/images/Curriculum_Vitae_Nathaniel Aidoo_Updated_V2.0i.pdf"
+                download="CV">
+                <Button
+                  label="Download CV"
+                  extraClasses="px-8 py-5 mb-4 lg:mb-0 whitespace-nowrap font-normal"
+                />
+              </Link>
+              <Link href="#contact">
+              <Button
+                label="Contact me"
+                extraClasses="px-8 py-5 font-normal whitespace-nowrap"
+              />
+              </Link>
             </div>
           </div>
         </div>
         <div className="bg-psecondary w-full overflow-hidden border border-b-[18px] border-r-[18px] border-white">
-          
-          <Image 
-          src="/assets/images/nathaniel.png"
-          alt="Nathaniel's picture"
-          width={600}
-          height={600}
-          className="flex w-full flex-1 transition-transform duration-200 ease-linear hover:scale-105"
+          <Image
+            src="/assets/images/nathaniel.png"
+            alt="Nathaniel's picture"
+            width={600}
+            height={600}
+            className="flex w-full flex-1 transition-transform duration-200 ease-linear hover:scale-105"
           />
-        
         </div>
       </div>
     </section>

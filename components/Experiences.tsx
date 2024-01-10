@@ -36,7 +36,7 @@ const ExperienceItem = ({ imageSrc, altText, yearRange, title, company, location
         </div>
       </div>
       <div className="lg:ml-auto">
-        <Link href="/">
+        <Link href="#experiencedetails">
           <Button label="Read More" extraClasses="px-6 py-4" />
         </Link>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import BadgeDate from "./BadgeDate";
-import { educationData } from "@/constants";
+import { educationDataRight, educationDataLeft } from "@/constants";
 
 interface EducationItemProps {
   course: string;
@@ -33,25 +33,25 @@ const EducationItem = ({ course, institution, date }: EducationItemProps) => (
 
 const Education = () => {
   return (
-    <article className="max-container flex w-full flex-col gap-8 lg:flex-row">
+    <section className="max-container mt-12 flex w-full flex-col gap-8 lg:flex-row">
       <div className="flex w-full flex-col items-start gap-6 font-montserrat">
-        <h3 className="text-primary mt-4 text-xs font-normal uppercase tracking-wide">2017 - Present</h3>
-        <h4 className="text-4xl font-bold leading-4 text-slate-800">Education</h4>
+        <h3 className="text-primary mt-4 text-xs font-normal uppercase tracking-wide">2022 - Present</h3>
+        <h4 className="mb-8 text-4xl font-bold leading-4 text-slate-800">Education</h4>
 
-        {educationData.map((item, index) => (
+        {educationDataLeft.map((item, index) => (
           <EducationItem key={index} {...item} />
         ))}
       </div>
 
       <div className="flex w-full flex-col items-start gap-6 font-montserrat">
-        <h3 className="text-primary mt-4 text-xs font-normal uppercase tracking-wide">2017 - Present</h3>
-        <h4 className="text-4xl font-bold leading-4 text-slate-800">Education</h4>
+        <h3 className="text-primary mt-4 text-xs font-normal uppercase tracking-wide">2017 - 2022</h3>
+        <h4 className="mb-8 text-4xl font-bold leading-4 text-slate-800">Education</h4>
 
-        {educationData.map((item, index) => (
+        {educationDataRight.map((item, index) => (
           <EducationItem key={index} {...item} />
         ))}
       </div>
-    </article>
+    </section>
   );
 };
 

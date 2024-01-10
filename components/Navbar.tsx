@@ -42,7 +42,7 @@ const Navbar = () => {
       id="sticky-header"
       ref={headerRef}
       className={`${
-        sticky.isSticky ? "stickyNav shadowNav border-none backdrop-blur" : ""
+        sticky.isSticky ? "stickyNav shadowNav border-none bg-white " : ""
       } top-0 z-40 w-full border-b border-slate-300 px-[45px] py-[12px]`}>
       <nav className="mx-auto flex w-full max-w-[1440px] items-center justify-between ">
         <Link href="/">
