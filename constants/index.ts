@@ -185,5 +185,4 @@ export const projects = [
     title: "Built an E-Commerce Website Using Wrodpress.",
     likeCount: 101,
   },
-  // Add more projects as needed
 ];

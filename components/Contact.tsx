@@ -25,7 +25,6 @@ import { useRouter } from "next/navigation";
 const Contact = () => {
 const [isSubmitting, setIsSubmitting] = useState(false);
 const router = useRouter();
-// const pathname = usePathname();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -38,7 +37,6 @@ const router = useRouter();
     },
   });
 
-  // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
 

@@ -1,55 +1,9 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { projects, projectsData } from "@/constants";
+import { projects } from "@/constants";
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-// import { projectsData } from '@/constants';
-
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-
-interface Props {
-  title: string;
-  description: string;
-  imageSrc: string;
-  children?: React.ReactNode;
-}
-
-const ProjectItem = ({ title, description, imageSrc }: Props) => (
-  <CarouselItem>
-    <div className="flex flex-col items-start gap-6 py-7">
-      <div className="w-full">
-        <Image
-          src={imageSrc}
-          alt="Project Image"
-          width={500}
-          height={400}
-          className="w-full rounded-lg"
-        />
-      </div>
-      <div className="w-[80%] font-montserrat max-lg:order-last">
-        <h2 className="mb-6 text-2xl font-bold">{title}</h2>
-        <p className="mb-9 text-base leading-7">{description}</p>
-        <p>Fully responsive. SEO optimized. WordPress</p>
-      </div>
-    </div>
-  </CarouselItem>
-);
 
 const Portfolio = () => {
-  const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
   return (
     <section className="max-container flex flex-col gap-5">
@@ -60,16 +14,13 @@ const Portfolio = () => {
         My Portfolio
       </h2>
 
-      <Dialog>
-        <DialogTrigger>
           <div className="grid w-full gap-6 p-4 font-montserrat max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => (
               <div
                 key={index}
                 className="bg-psecondary flex flex-col gap-4 p-6"
-                onClick={() => setSelectedProject(index)}
-                style={{ cursor: 'pointer' }}
-              >
+                
+                style={{ cursor: "pointer" }}>
                 <div className="overflow-hidden rounded-lg">
                   <Image
                     src={project.imageSrc}
@@ -97,7 +48,7 @@ const Portfolio = () => {
                     </div>
                   </div>
                   <h2 className="hover:text-primary group text-start font-montserrat text-[23px] font-bold transition-colors duration-300 ease-linear">
-                    {project.title}{' '}
+                    {project.title}{" "}
                     <Image
                       src="assets/icons/arrow-up-right.svg"
                       alt="Arrow up right icon"
@@ -110,30 +61,6 @@ const Portfolio = () => {
               </div>
             ))}
           </div>
-        </DialogTrigger>
-        <DialogContent className="bg-psecondary">
-          <DialogHeader>
-            <DialogTitle>
-              <div className="bg-psecondary flex w-full px-14">
-                <Carousel className="w-full">
-                  <CarouselContent>
-                    {selectedProject !== null && (
-                      <ProjectItem
-                        title={projects[selectedProject].title}
-                        description={projects[selectedProject].description}
-                        imageSrc={projects[selectedProject].imageSrc}
-                        gallery={projects[selectedProject].gallery}
-                      />
-                    )}
-                  </CarouselContent>
-                  <CarouselPrevious className="cursor-pointer bg-gradient-to-r from-[#e2e8ec] to-[#ffffff] shadow-lg" />
-                  <CarouselNext className="cursor-pointer bg-gradient-to-r from-[#e2e8ec] to-[#ffffff] shadow-lg" />
-                </Carousel>
-              </div>
-            </DialogTitle>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 };

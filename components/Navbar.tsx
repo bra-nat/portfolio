@@ -5,11 +5,20 @@ import Link from "next/link";
 import Button from "./Button";
 import { useEffect, useRef, useState } from "react";
 
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
 const Navbar = () => {
   const [sticky, setSticky] = useState({ isSticky: false, offset: 0 });
   const headerRef = useRef<HTMLDivElement | null>(null);
 
-  // handle scroll event
   const handleScroll = (elTopOffset: any, elHeight: any) => {
     if (window.pageYOffset > elTopOffset + elHeight) {
       setSticky({ isSticky: true, offset: elHeight });
@@ -18,23 +27,20 @@ const Navbar = () => {
     }
   };
 
-  // add/remove scroll event listener
   useEffect(() => {
-  
-      const header = headerRef.current?.getBoundingClientRect();
+    const header = headerRef.current?.getBoundingClientRect();
 
-      const handleScrollEvent = () => {
-        if(header) {
-            handleScroll(header.top, header.height);
-        }
-      };
+    const handleScrollEvent = () => {
+      if (header) {
+        handleScroll(header.top, header.height);
+      }
+    };
 
-      window.addEventListener("scroll", handleScrollEvent);
+    window.addEventListener("scroll", handleScrollEvent);
 
-      return () => {
-        window.removeEventListener("scroll", handleScrollEvent);
-      };
-    
+    return () => {
+      window.removeEventListener("scroll", handleScrollEvent);
+    };
   }, []);
 
   return (
@@ -75,13 +81,88 @@ const Navbar = () => {
           </div>
           <div className="hidden max-lg:block">
             <div className="bg-p_primary-rounded ml-5 p-4 hover:scale-105">
-              <Image
-                src={"/assets/icons/hamburger.svg"}
-                width={25}
-                height={25}
-                alt="Logo"
-                className="text-primary-svg"
-              />
+              <Sheet>
+                <SheetTrigger>
+                  <Image
+                    src={"/assets/icons/hamburger.svg"}
+                    width={25}
+                    height={25}
+                    alt="Logo"
+                    className="text-primary-svg"
+                  />
+                </SheetTrigger>
+                <SheetContent className="bg-white px-10" side={"left"}>
+                  <SheetHeader>
+                    <Link href="/">
+                      <Image
+                        src={"/assets/icons/logo-white.png"}
+                        width={140}
+                        height={140}
+                        alt="Logo"
+                      />
+                    </Link>
+                  </SheetHeader>
+                  <SheetTitle className="mb-6 border-b border-slate-300 py-5 font-montserrat text-base font-normal leading-8">
+                    Hi, there! This is Nathaniel, a web developer ready with
+                    current tools and technologies to help build your dream
+                    website which is responsive across all media devices. Get in
+                    touch, let&apos;s work together.
+                  </SheetTitle>
+                  <SheetDescription>
+                    <nav className="flex ">
+                      <div className=" items-center max-lg:flex">
+                        <div className="flex gap-8">
+                          <ul className="flex flex-col items-start justify-start gap-4">
+                            {navlinks.map((link) => (
+                              <li key={link.label}>
+                                <Link
+                                  href={link.route}
+                                  className="hover:text-primary font-montserrat text-sm font-normal uppercase transition-colors duration-200 ease-in ">
+                                  {link.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </nav>
+                  </SheetDescription>
+                  <SheetFooter className="mt-12 ">
+                    <div className="mr-auto flex flex-col items-start gap-4 ">
+                    <p className="text-base uppercase">Find me</p>
+                    <div className="flex gap-4 ">
+                      <div className="bg-p_primary group flex items-center justify-center p-4">
+                        <Image
+                          src="/assets/icons/xa.svg"
+                          alt="Twitter Logo"
+                          width={20}
+                          height={20}
+                          className="group-hover:text-white-svg"
+                        />
+                      </div>
+                      <div className="bg-p_primary group flex items-center justify-center p-4">
+                        <Image
+                          src="/assets/icons/linkedin-a.svg"
+                          alt="LinkedIn Logo"
+                          width={20}
+                          height={20}
+                          className="group-hover:text-white-svg"
+                        />
+                      </div>
+                      <div className="bg-p_primary group flex items-center justify-center p-4">
+                        <Image
+                          src="/assets/icons/github.svg"
+                          alt="GitHub Logo"
+                          width={20}
+                          height={20}
+                          className="group-hover:text-white-svg"
+                        />
+                      </div>
+                    </div>
+                    </div>
+                  </SheetFooter>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
         </div>

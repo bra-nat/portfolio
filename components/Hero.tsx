@@ -59,8 +59,8 @@ const Hero = () => {
           </div>
           <div className="bg-psecondary flex flex-col items-start gap-4 p-6 font-montserrat text-base ">
             <p>Download my curriculum vitae:</p>
-            <div className="flex flex-col items-center justify-center gap-4 xl:flex-row xl:gap-6">
-              {/* Add a download link <a href="/test.svg/>" download="Logo" */}
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+              
               <Link
                 href="/assets/images/Curriculum_Vitae_Nathaniel Aidoo_Updated_V2.0i.pdf"
                 download="CV">

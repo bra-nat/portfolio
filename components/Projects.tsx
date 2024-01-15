@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -7,7 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { projectsData } from '@/constants';
+import { projectsData } from "@/constants";
 
 interface Props {
   title: string;
@@ -15,7 +15,7 @@ interface Props {
   imageSrc: string;
 }
 
-const ProjectItem = ({ title, description, imageSrc } : Props) => (
+const ProjectItem = ({ title, description, imageSrc }: Props) => (
   <CarouselItem>
     <div className="flex flex-col items-start gap-6 py-7 lg:flex-row">
       <div className="w-[80%] font-montserrat max-lg:order-last">
@@ -50,7 +50,12 @@ const Projects = () => {
           <Carousel className="w-full">
             <CarouselContent>
               {projectsData.map((project, index) => (
-                <ProjectItem key={index} {...project} />
+                <ProjectItem
+                  key={index}
+                  title={project.title}
+                  description={project.description}
+                  imageSrc={project.imageSrc}
+                />
               ))}
             </CarouselContent>
             <CarouselPrevious className="cursor-pointer bg-gradient-to-r from-[#e2e8ec] to-[#ffffff] shadow-lg" />
