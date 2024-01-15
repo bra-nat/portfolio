@@ -23,8 +23,8 @@ import { createForm } from "@/lib/actions/ContactFrom.action";
 import { useRouter } from "next/navigation";
 
 const Contact = () => {
-const [isSubmitting, setIsSubmitting] = useState(false);
-const router = useRouter();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -41,24 +41,23 @@ const router = useRouter();
     setIsSubmitting(true);
 
     try {
-       await createForm({
+      await createForm({
         name: values.fullname,
         phone: values.phone,
         email: values.email,
         subject: values.subject,
-        message: values.message
-       });
+        message: values.message,
+      });
 
-       router.push("/");
+      router.push("/");
     } catch (error) {
-        
     } finally {
-        setIsSubmitting(false);
+      setIsSubmitting(false);
     }
   }
 
   return (
-    <section className="max-container flex w-full px-14">
+    <section className="max-container flex w-full px-14 max-sm:px-4">
       <div className="flex w-full flex-col items-center justify-center gap-6 font-montserrat">
         <h1 className="text-primary mb-2 text-sm font-normal uppercase tracking-wide">
           Contact
@@ -148,10 +147,13 @@ const router = useRouter();
                     render={({ field }) => (
                       <FormItem className="w-full ">
                         <FormLabel className="font-montserrat text-xs font-medium uppercase text-[#3c3e41]">
-                          Full Name <span className="text-primary font-montserrat text-xs font-medium">*</span>
+                          Full Name{" "}
+                          <span className="text-primary font-montserrat text-xs font-medium">
+                            *
+                          </span>
                         </FormLabel>
-                        <FormControl >
-                          <Input {...field} className="min-h-[56px] "/>
+                        <FormControl>
+                          <Input {...field} className="min-h-[56px] " />
                         </FormControl>
                         <FormMessage className="text-primary font-montserrat text-xs font-medium uppercase" />
                       </FormItem>
@@ -163,7 +165,10 @@ const router = useRouter();
                     render={({ field }) => (
                       <FormItem className=" w-full">
                         <FormLabel className="font-montserrat text-xs font-medium uppercase text-[#3c3e41]">
-                          Phone Number <span className="text-primary font-montserrat text-xs font-medium">*</span>
+                          Phone Number{" "}
+                          <span className="text-primary font-montserrat text-xs font-medium">
+                            *
+                          </span>
                         </FormLabel>
                         <FormControl>
                           <Input {...field} className="min-h-[56px]" />
@@ -179,10 +184,17 @@ const router = useRouter();
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="font-montserrat text-xs font-medium uppercase text-[#3c3e41]">
-                        Email <span className="text-primary font-montserrat text-xs font-medium">*</span>
+                        Email{" "}
+                        <span className="text-primary font-montserrat text-xs font-medium">
+                          *
+                        </span>
                       </FormLabel>
                       <FormControl>
-                        <Input {...field} type="email" className="min-h-[56px]" />
+                        <Input
+                          {...field}
+                          type="email"
+                          className="min-h-[56px]"
+                        />
                       </FormControl>
                       <FormMessage className="text-primary font-montserrat text-xs font-medium uppercase" />
                     </FormItem>
@@ -210,7 +222,10 @@ const router = useRouter();
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="font-montserrat text-xs font-medium uppercase text-[#3c3e41]">
-                        Your Message <span className="text-primary font-montserrat text-xs font-medium">*</span>
+                        Your Message{" "}
+                        <span className="text-primary font-montserrat text-xs font-medium">
+                          *
+                        </span>
                       </FormLabel>
                       <FormControl>
                         <Textarea {...field} className="min-h-[256px]" />
@@ -219,7 +234,10 @@ const router = useRouter();
                     </FormItem>
                   )}
                 />
-                <Button type="submit" className="bg-p_primary min-h-[56px] w-full" disabled={isSubmitting}>
+                <Button
+                  type="submit"
+                  className="bg-p_primary min-h-[56px] w-full"
+                  disabled={isSubmitting}>
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>

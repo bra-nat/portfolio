@@ -6,7 +6,7 @@ import Portfolio from "./Portfolio";
 
 const Resume = () => {
   return (
-    <section className="max-container flex w-full px-14">
+    <section className="max-container flex w-full px-14 max-sm:px-4">
       <div className="flex w-full flex-col items-center justify-center gap-6 font-montserrat">
         <h1 className="text-primary text-sm font-normal uppercase tracking-wide">
           7+ years of professional experience

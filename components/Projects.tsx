@@ -19,9 +19,13 @@ const ProjectItem = ({ title, description, imageSrc }: Props) => (
   <CarouselItem>
     <div className="flex flex-col items-start gap-6 py-7 lg:flex-row">
       <div className="w-[80%] font-montserrat max-lg:order-last">
-        <h2 className="mb-6 text-2xl font-bold">{title}</h2>
-        <p className="mb-9 text-base leading-7">{description}</p>
-        <p>Fully responsive. SEO optimized. WordPress</p>
+        <h2 className="mb-6 max-sm:text-base text-2xl text-wrap whitespace-normal font-bold">
+          {title}
+        </h2>
+        <p className="mb-9 text-base leading-7 whitespace-normal text-wrap">
+          {description}
+        </p>
+        <p>Fully responsive. SEO optimized.</p>
       </div>
       <div className="w-full">
         <Image
@@ -46,8 +50,8 @@ const Projects = () => {
         <h2 className="text-6xl font-bold leading-10 text-slate-800 max-lg:text-4xl max-lg:leading-6">
           Featured Projects
         </h2>
-        <div className="bg-psecondary flex w-full px-14">
-          <Carousel className="w-full">
+        <div className="bg-psecondary flex w-full px-14 max-sm:px-8 ">
+          <Carousel className="w-full ">
             <CarouselContent>
               {projectsData.map((project, index) => (
                 <ProjectItem
@@ -58,6 +62,7 @@ const Projects = () => {
                 />
               ))}
             </CarouselContent>
+
             <CarouselPrevious className="cursor-pointer bg-gradient-to-r from-[#e2e8ec] to-[#ffffff] shadow-lg" />
             <CarouselNext className="cursor-pointer bg-gradient-to-r from-[#e2e8ec] to-[#ffffff] shadow-lg" />
           </Carousel>

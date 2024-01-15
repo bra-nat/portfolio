@@ -12,8 +12,13 @@ export const projectsData = [
     description: `During my venture into web development, I constructed a comprehensive portfolio website from the ground up. By employing HTML, CSS, JavaScript, and SASS, this project not only showcases my practical skills but also represents a pivotal milestone in my development`,
     imageSrc: "/assets/images/2a-1200x686.jpg",
     gallery: [
-      {src: "/assets/images/2a-1200x686.jpg", src2: "/assets/images/2a-1200x686.jpg", src3: "/assets/images/2a-1200x686.jpg", src4: "/assets/images/2a-1200x686.jpg"}
-    ]
+      {
+        src: "/assets/images/2a-1200x686.jpg",
+        src2: "/assets/images/2a-1200x686.jpg",
+        src3: "/assets/images/2a-1200x686.jpg",
+        src4: "/assets/images/2a-1200x686.jpg",
+      },
+    ],
   },
   {
     title: "Built an E-Commerce Website Using React",
@@ -21,8 +26,13 @@ export const projectsData = [
       "Amidst my journey of learning React, I built a ground-up e-commerce website. This endeavor not only applied my learning but also marked a key milestone in my development journey.",
     imageSrc: "/assets/images/3a-1200x686.jpg",
     gallery: [
-      {src: "/assets/images/2a-1200x686.jpg", src2: "/assets/images/2a-1200x686.jpg", src3: "/assets/images/2a-1200x686.jpg", src4: "/assets/images/2a-1200x686.jpg"}
-    ]
+      {
+        src: "/assets/images/2a-1200x686.jpg",
+        src2: "/assets/images/2a-1200x686.jpg",
+        src3: "/assets/images/2a-1200x686.jpg",
+        src4: "/assets/images/2a-1200x686.jpg",
+      },
+    ],
   },
 ];
 
@@ -47,7 +57,7 @@ export const experienceData = [
     imageSrc: "/assets/images/Busy-Internet.webp",
     altText: "Office for Busy Internet Co LTD",
     yearRange: "2017 - 2022",
-    title: "Network Support Engineer.",
+    title: "Network Engineer.",
     company: "Busy Internet Co. LTD",
     location: "No. 66, Dzorwulu, Accra - Ghana",
   },
@@ -131,7 +141,7 @@ export const jobData = [
       "Troubleshooting and resolving all technical issues, providing diagnostic, and analytical support.",
     ],
   },
-  
+
   {
     title: "Experience II",
     position: "Network Engineer",
